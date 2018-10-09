@@ -1,0 +1,10 @@
+Thank you for order!
+
+Details:
+${order.orderId}
+${order.orderTime}
+${order.orderedItem.name}
+${order.orderedCount}
+
+
+Best Regards
