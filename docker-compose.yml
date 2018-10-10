@@ -12,7 +12,7 @@ services:
     environment:
       - SPRING_MAIL_HOST=host.docker.internal
       - SPRING_JPA_SHOW-SQL=false
-      - spring.jpa.hibernate.ddl-auto=create
+      - SPRING_JPA_HIBERNATE_DDL-AUTO=create
 
   db:
     image: postgres:10.5-alpine
