@@ -3,7 +3,7 @@ package com.bereczki.work.spring.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "shop_item", indexes = { @Index(columnList = "name") })
+@Table(name = "shop_item", indexes = { @Index(name = "name_index", columnList = "name") })
 public class ShopItem {
 
     @Id
@@ -13,6 +13,7 @@ public class ShopItem {
     @OneToOne
     private Category category;
 
+    @Column(name = "name")
     private String name;
 
     private String description;

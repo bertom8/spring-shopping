@@ -7,11 +7,12 @@ services:
     image: "shopping/app"
     ports:
       - "8080:8080"
-    link:
+    links:
       - db
     environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db/shopping_postgres
       - SPRING_MAIL_HOST=host.docker.internal
-      - SPRING_JPA_SHOW-SQL=false
+      - SPRING_JPA_SHOW-SQL=true
       - SPRING_JPA_HIBERNATE_DDL-AUTO=create
 
   db:

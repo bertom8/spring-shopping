@@ -4,7 +4,8 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "orders", indexes = { @Index(columnList = "ordered_by"), @Index(columnList = "status") })
+@Table(name = "orders", indexes = { @Index(name = "order_by_index", columnList = "ordered_by"),
+        @Index(name = "status_index", columnList = "status") })
 public class Order {
 
     public enum TakingMode {
@@ -17,7 +18,6 @@ public class Order {
         ORDER_READY,
         SENT,
         TOOK
-
     }
 
     @Id
@@ -48,6 +48,7 @@ public class Order {
     private boolean paid;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "status")
     private OrderStatus status;
 
 
